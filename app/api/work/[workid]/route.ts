@@ -3,11 +3,11 @@ import { Work } from "@/models/Work";
 import { NextResponse } from "next/server";
 
 
-export async function GET(req: Request,  { params }: { params: Promise<{ courseid: string }> }) {
+export async function GET(req: Request,  { params }: { params: Promise<{ workid: string }> }) {
    try {
        await connectDB()
-       const {courseid} = await params
-       const work = await Work.findById(courseid)
+       const {workid} = await params
+       const work = await Work.findById(workid)
        if(!work) {
       return NextResponse.json(
         { message: "Product not found" },
