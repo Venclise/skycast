@@ -6,8 +6,8 @@ import React from "react";
 
 export default function Contact() {
   return (
-    <div className="w-full h-max lg:p-10 p-5 flex items-center lg:flex-row flex-col justify-between">
-      <div className="lg:w-1/2 w-full flex flex-col gap-4">
+    <div className="w-full h-max lg:p-10 p flex items-center lg:flex-row flex-col justify-between">
+      <div className="lg:w-1/2 w-full flex flex-col gap-4 p-5">
         <div className="flex flex-col gap-4">
           <AnimatedText animate="bottomToTop">
             <h5 className=" text-white text-4xl lg:text-left text-center">

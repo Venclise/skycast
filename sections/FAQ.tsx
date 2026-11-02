@@ -32,7 +32,7 @@ export default function FAQ() {
       </AnimatedText>
       <div className="flex items-center justify-center w-full  mt-12 flex-col">
         <Accordion
-          defaultValue={["item-1"]}
+        
           className="flex flex-col gap-4 w-full md:w-[50%]"
         >
           {faqs.slice(0, limit).map(({ id, question, answer }) => {

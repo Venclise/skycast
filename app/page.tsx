@@ -11,10 +11,8 @@ export default function page() {
   return (
     <div className=' h-full w-full overflow-x-hidden'>
  <Hero />     
- <Stats />
  <Services />
  <Work />
- <Reviews />
  <FAQ />
  <Contact />  
  

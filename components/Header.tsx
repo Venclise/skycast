@@ -1,5 +1,6 @@
+"use client"
 import { navLinks } from '@/lib/constants'
-import { ArrowRight, ChevronRight, Menu, Phone } from 'lucide-react'
+import { ArrowRight, ChevronRight, Cloud, Menu, Phone } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from './ui/button'
@@ -13,16 +14,46 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import { useEffect, useState } from 'react'
 
 export default function Header() {
+
+
+  const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+    const isSolid =  scrolled;
+      useEffect(() => {
+    setMounted(true);
+
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (  
-    <div className='w-full  flex  fixed top-0 border-b border-neutral-800 left-0 z-50 bg-[#0E1219]   items-center justify-between   h-[4rem]  py-6 px-10 '>
+      <header className="fixed top-0 left-0 w-full z-50 transition-colors duration-300">
+    <div
+     className={`w-full p-5 flex items-center justify-between transition-all duration-300 ${
+          isSolid
+            ? "bg-[#0E1219] text-black   border-gray-900"
+            : "bg-transparent text-white border-0"
+        }`}>
+
       
 <div className='flex items-center gap-3 '>  
-{/* <Image src="/logo-sm.png" alt="Lime forge logo" height="10" width="120" /> */}  
-      <Link href="/" className='font-semibold text-2xl flex items-center '>
-           {/* <Image src="/logo.png" width={50} height={50} alt="logo"/> */}
-           <span className='text-sm lg:text-md text-white mt-4'>
+
+      <Link href="/" className='font-semibold text-2xl flex items-center justify-center gap-3'>
+    
+            <Cloud fill='#fff' />
+           <span className='text-sm lg:text-md text-white  '>
         SkyCast Studios.
            </span>
            </Link>  
@@ -39,10 +70,13 @@ export default function Header() {
           }
             </div>
          <div className='hidden lg:flex items-center  '>
-      <Link href="/quote">
-           <Button variant="secondary" className="p-5 hover:gap-5  rounded-full  cursor-pointer">
-              Request a quote <ChevronRight />
-            </Button>
+        <Link href="/quote">
+              <Button
+                variant="secondary"
+                className="px-5 py-5 hover:gap-5 uppercase text-xs rounded-full  cursor-pointer"
+              >
+                Request a quote
+              </Button>
             </Link>
     </div>  
 
@@ -55,29 +89,34 @@ export default function Header() {
         <Menu className='text-white'/>
     </Button>
   </SheetTrigger>
-  <SheetContent  className="z-100 bg-[#111]  border-0">
+  <SheetContent  className="z-100 bg-[#111]  border-0 p-2">
     <SheetHeader>
       <SheetTitle>
-     <Link href="/" className='font-semibold text-2xl flex items-center '>
-           <span className='text-sm lg:text-md text-white mt-4'>
+        <Link href="/" className='font-semibold text-2xl flex items-center gap-3'>
+    
+            <Cloud fill='#fff' />
+           <span className='text-sm lg:text-md text-white  '>
         SkyCast Studios.
            </span>
            </Link>  
       </SheetTitle>
-      <SheetDescription className="flex flex-col gap-2 h-screen my-20 ">
+      <SheetDescription className="flex flex-col gap-3 h-screen justify-center  ">
         {
             navLinks.map(({id,title,link}) => (
                 <SheetClose>
-                <Link href={link} key={id} className={`group text-white  text-lg flex items-center justify-between hover:bg-neutral-900 py-2 px-2 rounded-sm hover:text-white capitalize  tranition-all  ${link === ""  ? "text-neutral-800 bg-gray-200" : "text-gray-700"}`}>
+                <Link href={link} key={id} className={`group text-white  text-2xl flex items-center justify-between hover:bg-neutral-900 py-2 px-2 rounded-sm hover:text-white capitalize  tranition-all  ${link === ""  ? "text-neutral-800 bg-gray-200" : "text-gray-700"}`}>
                     {title}
                 </Link>
                 </SheetClose>
             ))
         }
-       <Link href="/quote" className='w-full'>
-           <Button variant="secondary" className="p-5 hover:gap-5 w-full rounded-full  cursor-pointer">
-              Request a quote <ChevronRight />
-            </Button>
+          <Link href="/quote">
+              <Button
+                variant="secondary"
+                className="px-5 py-6 hover:gap-5 uppercase text-xs rounded-full w-full  cursor-pointer"
+              >
+                Request a quote
+              </Button>
             </Link>
 
        
@@ -88,5 +127,6 @@ export default function Header() {
 </Sheet>
 </div>
     </div>
+    </header>
   )
 }

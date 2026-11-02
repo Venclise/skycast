@@ -7,10 +7,6 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 
 
-
-
-
-
 export  function HighlightPulse({
   children,
 }: {

@@ -19,49 +19,39 @@ import {
   ArrowRight
 } from "lucide-react";
 import AnimatedText from "@/lib/Herotitle";
+import { Button } from "@/components/ui/button";
 
 export default function Services() {
   return (
-    <div id="services" className="min-h-screen w-full lg:p-10 p-5 flex flex-col gap-10 bg-neutral-950 text-white font-sans">
+    <div id="services" className="min-h-screen w-full lg:p-20 p-5 flex flex-col gap-10 bg-neutral-950 text-white font-sans">
       
-      {/* Header Section */}
        <AnimatedText animate="bottomToTop" >
 
-      <div className="w-full flex items-center gap-3 flex-col text-center max-w-2xl mx-auto">
-        <h1 className="lg:text-5xl text-4xl  text-white text-center  mt-5">
+      <div className=" flex items-center gap-3 ">
+        <h1 className="lg:text-5xl text-4xl font-semibold max-w-md  text-[#fafafa]   mt-5">
           Services
-        </h1>
-        <h2 className="text-lg sm:text-xl md:text-2xl text-neutral-400 font-normal">
           built to get you customers.
-        </h2>
+        </h1>
+        
       </div>
        </AnimatedText>
 
-      {/* Main Grid Section */}
+   
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full max-w-7xl mx-auto">
         
         {/* Card 1: Website Development */}
         
-        <div className="bg-[#1C241E] rounded-3xl lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between gap-8 relative overflow-hidden border border-emerald-900/30 group min-h-[500px]">
+        <div className="bg-[#151515] rounded-3xl lg:col-span-6 p-6 sm:p-10  flex flex-col justify-between gap-8 relative overflow-hidden border border-neutral-800 group min-h-[500px]">
       <AnimatedText animate="bottomToTop">
           
-          {/* Subtle Dot Grid Background Effect */}
-          <div 
-            className="absolute inset-0 opacity-15 pointer-events-none"
-            style={{
-              backgroundImage: `radial-gradient(circle, #a3e635 1px, transparent 1px)`,
-              backgroundSize: "20px 20px",
-            }}
-          />
+          
+       
 
           {/* Text Content */}
           <div className="flex flex-col gap-2 z-10 max-w-lg">
-            <h3 className="text-neutral-100 text-2xl sm:text-3xl font-semibold tracking-tight">
+            <h3 className="text-[#f5f5f5] text-2xl sm:text-3xl font-semibold ">
               Websites development
             </h3>
-            <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">
-              Fast, custom-built websites that turn visitors into enquiries.
-            </p>
           </div>
 
           {/* Canvas Area with Mockup & Floating UI */}
@@ -111,14 +101,14 @@ export default function Services() {
             </div>
 
             {/* Floating User Pointer Badge */}
-            <div className="absolute right-2 sm:right-6 top-8 bg-emerald-600/90 text-white text-xs font-medium px-3 py-1.5 rounded-lg flex items-center gap-1.5 shadow-lg z-20 backdrop-blur-sm animate-pulse">
+            <div className="absolute right-2 sm:right-6 top-8 bg-yellow-600/90 text-white text-xs font-medium px-3 py-1.5 rounded-lg flex items-center gap-1.5 shadow-lg z-20 backdrop-blur-sm animate-pulse">
               <MousePointer size={12} className="-rotate-45 fill-white" />
               <span>You</span>
             </div>
 
             {/* Bottom Right Floating Card Badge */}
             <div className="absolute right-0 sm:right-2 -bottom-2 bg-neutral-900/90 backdrop-blur-md border border-neutral-700/80 rounded-xl p-3 flex items-center gap-3 shadow-2xl z-20 max-w-[220px]">
-              <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+              <div className="w-8 h-8 rounded-lg bg-yellow-500/20 flex items-center justify-center text-yellow-400 shrink-0">
                 <Sparkles size={16} />
               </div>
               <div className="flex flex-col min-w-0">
@@ -131,20 +121,30 @@ export default function Services() {
           </div>
 
           {/* Full Width Link Button */}
+          <div className="flex items-center gap-4 justify-center">
+
           <Link 
-            href="#" 
-            className="w-full mx-auto lg:w-max capitalize bg-white text-black  py-3 px-6 rounded-full flex items-center justify-center gap-2 hover:bg-neutral-200 transition-colors z-10 text-center"
-          >
-            <span>view service</span>
-            <ArrowRight size={15} />
+            href="/services/website-development" 
+            >
+             <Button variant="secondary" className="px-5 py-5 hover:gap-5 uppercase text-xs rounded-full  cursor-pointer">
+              Learn more
+            </Button>
           </Link>
+
+              
+              <Link href="/quote">
+            <Button variant="link" className="hover:gap-5 bg-transparent text-[#fafafa] hover:text-neutral-300  underline text-xs uppercase rounded-full  cursor-pointer">
+              get quote <ArrowUpRight />
+            </Button>
+              </Link>
+            </div>
 
 </AnimatedText>
         </div>  
 
 
         {/* Card 2: Social Media Marketing */}
-        <div className="bg-[#1E1E1E] rounded-3xl lg:col-span-5 p-6 sm:p-10 flex flex-col justify-between gap-8 relative overflow-hidden border border-neutral-800 group min-h-[500px]">
+        <div className="bg-[#151515] rounded-3xl lg:col-span-6 p-6 sm:p-10 flex flex-col justify-between gap-8 relative overflow-hidden border border-neutral-800 group min-h-[500px]">
       <AnimatedText animate="bottomToTop" delay={0.3}>
           {/* Text Content */}
 
@@ -152,9 +152,7 @@ export default function Services() {
             <h3 className="text-neutral-100 text-2xl sm:text-3xl font-semibold tracking-tight">
               Social media marketing
             </h3>
-            <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">
-              Scroll-stopping posts and steady content that keep your business visible.
-            </p>
+      
           </div>
 
           {/* Stacked Tilted Cards Area */}
@@ -216,37 +214,39 @@ export default function Services() {
           </div>
 
           {/* Full Width Link Button */}
+           <div className="flex items-center gap-4 justify-center">
+
           <Link 
-            href="#" 
-            className="w-full mx-auto lg:w-max capitalize bg-white text-black  py-3 px-6 rounded-full flex items-center justify-center gap-2 hover:bg-neutral-200 transition-colors z-10 shadow-lg text-center"
-          >
-            <span>view service</span>
-            <ArrowRight size={15} />
+            href="/services/social-media-marketing" 
+            >
+             <Button variant="secondary" className="px-5 py-5 hover:gap-5 uppercase text-xs rounded-full  cursor-pointer">
+              Learn more
+            </Button>
           </Link>
+
+              
+              <Link href="/quote">
+            <Button variant="link" className="hover:gap-5 bg-transparent text-[#fafafa] hover:text-neutral-300  underline text-xs uppercase rounded-full  cursor-pointer">
+              get quote <ArrowUpRight />
+            </Button>
+              </Link>
+            </div>
 
 </AnimatedText>
         </div>
       </div>
 
       {/* Card 3: Search Engine Optimization */}
-      <div className="w-full bg-[#181F1A] rounded-3xl p-6 sm:p-10 flex flex-col justify-between gap-8 relative overflow-hidden border border-emerald-900/30 group min-h-[500px] text-white max-w-7xl mx-auto">
+      <div className="w-full bg-[#151515] rounded-3xl p-6 sm:p-10 flex flex-col justify-between gap-8 relative overflow-hidden border border-emerald-900/30 group min-h-[500px] text-white max-w-7xl mx-auto">
         <AnimatedText animate="bottomToTop" delay={0.4}>
-        <div 
-          className="absolute inset-0 opacity-15 pointer-events-none"
-          style={{
-            backgroundImage: `radial-gradient(circle, #22c55e 1px, transparent 1px)`,
-            backgroundSize: "20px 20px",
-          }}
-        />
+      
 
         {/* Card Header Content */}
         <div className="flex flex-col gap-2 z-10 max-w-lg">
           <h3 className="text-neutral-100 text-2xl sm:text-3xl font-semibold tracking-tight">
             Search Engine Optimization
           </h3>
-          <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">
-            Rank #1 on Google, dominate your niche, and drive steady high-intent traffic that turns into paying clients.
-          </p>
+        
         </div>
 
         {/* Visual Canvas / Dashboard Section */}
@@ -317,13 +317,23 @@ export default function Services() {
         </div>
 
         {/* Full Width Link Button */}
-        <Link 
-          href="#" 
-          className="w-full mx-auto lg:w-max capitalize bg-white text-black  py-3 px-6 rounded-full flex items-center justify-center gap-2 hover:bg-neutral-200 transition-colors z-10 shadow-lg text-center"
-        >
-          <span>view service</span>
-          <ArrowRight size={15} />
-        </Link>
+             <div className="flex items-center gap-4 justify-center">
+
+          <Link 
+            href="/services/seo" 
+            >
+             <Button variant="secondary" className="px-5 py-5 hover:gap-5 uppercase text-xs rounded-full  cursor-pointer">
+              Learn more
+            </Button>
+          </Link>
+
+              
+              <Link href="/quote">
+            <Button variant="link" className="hover:gap-5 bg-transparent text-[#fafafa] hover:text-neutral-300  underline text-xs uppercase rounded-full  cursor-pointer">
+              get quote <ArrowUpRight />
+            </Button>
+              </Link>
+            </div>
 </AnimatedText>
       </div>
 

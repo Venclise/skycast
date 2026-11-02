@@ -13,14 +13,12 @@ import { ArrowUpRight, Layers, Send } from "lucide-react";
 
 export default function ContactForm() {
   return (
-    <div className="min-h-screen w-max bg-neutral-950 flex items-center justify-center p-4 sm:p-8 ">
+    <div className="min-h-screen w-full bg-neutral-950 flex items-center justify-center lg:p-4 p-2  ">
       
-      {/* Container Box */}
       <div className="w-full max-w-xl bg-[#191919] border-10 border-[#3B4539] rounded-[4rem] p-6 sm:p-10 shadow-2xl relative overflow-hidden text-white flex flex-col gap-8">
         
     
 
-        {/* Top Icon & Header */}
         <div className="flex flex-col items-center text-center gap-3 z-10">
           {/* <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shadow-lg">
             <Layers size={22} />

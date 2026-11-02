@@ -39,12 +39,11 @@ export default function Work() {
   }, [baseUrl]);
 
   return (
-    <div id="work" className="relative lg:p-10  gap-4 justify-between flex lg:flex-row flex-col items-center   h-max  text-neutral-900">
-      <div className="flex flex-col lg:items-start items-center lg:justify-start justify-center gap-4 max-w-md">
+    <div id="work" className="relative lg:p-10  gap-4 justify-between flex lg:flex-row flex-col items-center ">
+      <div className="flex flex-col lg:items-start items-center lg:justify-start justify-center gap-5  flex-1">
 
       <AnimatedText animate="bottomToTop">
-
-      <h1 className="lg:text-5xl text-4xl  text-white lg:text-left text-center  ">
+   <h1 className=" text-4xl lg:text-[4rem]   text-[#fafafa] font-medium">
         Real projects,<br />
 real businesses, <br />
 <span className="text-neutral-400 ">built to bring<br/> customers.</span>
@@ -52,13 +51,18 @@ real businesses, <br />
       </AnimatedText>
          <AnimatedText animate="bottomToTop">
 
-    <p className="text-sm lg:text-md text-neutral-300 lg:text-left text-center">A selection of websites and social media work, each one shaped around the business behind it.</p>
+    <p className="text-sm max-w-xl text-neutral-300 lg:text-left text-center">A selection of websites and social media work, each one shaped around the business behind it.</p>
         
       
       </AnimatedText>
-          <Button variant="secondary" className="w-max p-5 hover:gap-5  rounded-full  cursor-pointer">
-              See our work <ChevronRight />
-            </Button>
+           <Link href="/quote">
+                        <Button
+                          variant="secondary"
+                          className="p-5 hover:gap-5 uppercase text-xs rounded-full  cursor-pointer"
+                        >
+                          see our work
+                        </Button>
+                      </Link>
       </div>
 
       <div className="relative w-full lg:w-1/2">
